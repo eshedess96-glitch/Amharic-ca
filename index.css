@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+@theme {
+  --color-eth-gold: #D4A843;
+  --color-eth-gold-light: #E8C872;
+  --color-eth-gold-dark: #B8912E;
+  --color-eth-red: #8B1A1A;
+  --color-eth-red-light: #A52A2A;
+  --color-eth-red-dark: #6B0F0F;
+  --color-eth-green: #006B3F;
+  --color-eth-green-light: #00875A;
+  --color-eth-green-dark: #004D2E;
+  --color-eth-coffee: #3E2723;
+  --color-eth-coffee-light: #5D4037;
+  --color-eth-coffee-dark: #1B0E0A;
+  --color-eth-parchment: #F5F0E1;
+  --color-eth-parchment-dark: #E8DFC8;
+  --color-eth-cream: #FEFCF3;
+  --color-eth-ink: #1A1A2E;
+  --color-eth-blue: #16213E;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #D4A843 #F5F0E1;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: linear-gradient(135deg, #1A1A2E 0%, #16213E 50%, #0F3460 100%);
+  min-height: 100vh;
+}
+
+.eth-pattern {
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(212, 168, 67, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(139, 26, 26, 0.05) 0%, transparent 50%);
+}
+
+.parchment-tile {
+  background: linear-gradient(145deg, #F5F0E1 0%, #E8DFC8 100%);
+  border: 1px solid rgba(212, 168, 67, 0.3);
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.parchment-tile:hover {
+  box-shadow: 
+    0 4px 16px rgba(212, 168, 67, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  transform: translateY(-1px);
+}
+
+.formula-box {
+  background: #0D1117;
+  border: 1px solid #30363D;
+  border-radius: 8px;
+  font-family: 'Fira Code', 'Cascadia Code', 'JetBrains Mono', 'Consolas', monospace;
+  position: relative;
+}
+
+.formula-box::before {
+  content: 'FORMULA';
+  position: absolute;
+  top: -10px;
+  left: 12px;
+  background: #D4A843;
+  color: #1A1A2E;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: 1px;
+}
+
+.copy-flash {
+  animation: flashGreen 0.5s ease;
+}
+
+@keyframes flashGreen {
+  0% { background-color: #006B3F; color: white; }
+  100% { background-color: transparent; }
+}
+
+.geez-num {
+  font-family: 'Nyala', 'Abyssinica SIL', 'GF Zemen Unicode', serif;
+  font-weight: bold;
+}
+
+.glow-gold {
+  text-shadow: 0 0 20px rgba(212, 168, 67, 0.5), 0 0 40px rgba(212, 168, 67, 0.2);
+}
+
+.glow-card {
+  box-shadow: 0 0 30px rgba(212, 168, 67, 0.15);
+}
+
+.sheet-cell {
+  border: 1px solid #D0D7DE;
+  padding: 6px 10px;
+  font-size: 13px;
+}
+
+.sheet-header {
+  background: #F6F8FA;
+  font-weight: 600;
+  border: 1px solid #D0D7DE;
+  padding: 6px 10px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tab-active {
+  border-bottom: 3px solid #D4A843;
+  color: #D4A843;
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.pulse-dot {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.scroll-shadow {
+  background: 
+    linear-gradient(white 30%, rgba(255, 255, 255, 0)),
+    linear-gradient(rgba(255, 255, 255, 0), white 70%) 0 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 40px;
+}
